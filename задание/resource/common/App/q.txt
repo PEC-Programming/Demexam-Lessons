@@ -1,0 +1,49 @@
+[{
+"ClientId":1,
+"Client": {
+"Id":1,
+"LastName":"Тарасова",
+"FirstName":"Алиса",
+"MiddleName":"Кирилловна",
+"Phone":"+7 (922) 291-9524"
+},
+"Date":"2021-06-03",
+"Accepted":false,
+"OrderService":
+[
+{"Id":4,"Name":"Окрашивание волос однотонное (Wella Professionals)","Price":4400},{"Id":6,"Name":"Тонирование (Wella Professionals)","Price":4400}
+]
+},
+{
+"ClientId":2,
+"Client": {
+"Id":2,
+"LastName":"Акимова",
+"FirstName":"Елизавета",
+"MiddleName":"Максимовна",
+"Phone":"+7 (922) 731-2868"
+},
+"Date":"2021-06-04",
+"Accepted":false,
+"OrderService":
+[
+{"Id":15,"Name":"Чистка лица (Holy Land)","Price":3500},{"Id":18,"Name":"Экспресс-макияж","Price":2500}
+]
+},
+{
+"ClientId":3,
+"Client": {
+"Id":3,
+"LastName":"Захаров",
+"FirstName":"Константин",
+"MiddleName":"Константинович",
+"Phone":"+7 (922) 701-1950"
+},
+"Date":"2021-06-04",
+"Accepted":false,
+"OrderService":
+[
+{"Id":12,"Name":"Спа-педикюр","Price":3300},{"Id":7,"Name":"Мелирование на фольгу","Price":4500}
+]
+}
+]
