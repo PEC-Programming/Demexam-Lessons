@@ -1,5 +1,8 @@
-﻿using System;
+﻿using SaloonSharm.DbModel;
+using SaloonSharm.Helpers;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +26,35 @@ namespace SaloonSharm.Pages
         public OrderPage()
         {
             InitializeComponent();
+
+            PageHelper.PageName.Text = "Сотрудники";
+
+            var employee = PageHelper.ConnectDb.Employee;
+
+            dgOrder.ItemsSource = employee.ToList();
+            cmbPosition.ItemsSource = PageHelper.ConnectDb.Position.ToList();
+        }
+
+        private void dgOrder_CurrentCellChanged(object sender, EventArgs e)
+        {
+            PageHelper.ConnectDb.SaveChanges();
+        }
+
+        private void btnWatchClRecords_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedEmployee = dgOrder.SelectedItem as Employee;
+
+            if (PageHelper.ConnectDb.Order.Where(x => x.EmployeeId == selectedEmployee.Id).FirstOrDefault() != null)
+            {
+                if (MessageBox.Show("Вы хотите перейти к списку записей?", "Внимание", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    PageHelper.MainFrame.Navigate(new RecordsPage(selectedEmployee.Id));
+                }
+            }
+            else
+            {
+                MessageBox.Show("Для данного работника записи не найдены", "Ошибка");
+            }
         }
     }
 }

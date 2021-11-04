@@ -1,0 +1,37 @@
+﻿<Page x:Class="SaloonSharm.Pages.RecordsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SaloonSharm.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RecordsPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.15*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dgRecords" AutoGenerateColumns="False"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Дата">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding Path=Order.Date}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Order.Client.LastName}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Order.Client.FirstName}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Order.Client.MiddleName}"/>
+                <DataGridTextColumn Header="Услуги" Binding="{Binding Service.Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="1" Grid.Column="0" Content="Назад" x:Name="btnBack" Click="btnBack_Click" Margin="5" MinWidth="200" HorizontalAlignment="Left"/>
+    </Grid>
+</Page>

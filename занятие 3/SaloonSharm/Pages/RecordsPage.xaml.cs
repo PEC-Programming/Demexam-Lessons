@@ -1,6 +1,4 @@
-﻿using SaloonSharm.DbModel;
-using SaloonSharm.Helpers;
-using SaloonSharm.Pages;
+﻿using SaloonSharm.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,21 +14,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SaloonSharm
+namespace SaloonSharm.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for RecordsPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RecordsPage : Page
     {
-        public MainWindow()
+        public RecordsPage(int employeeId)
         {
             InitializeComponent();
 
-            PageHelper.ConnectDb = new SaloonDbEntities();
-            PageHelper.PageName = pageName;
-            PageHelper.MainFrame = mainFrame;
-            PageHelper.MainFrame.Navigate(new OrderPage());//(new SignInPage());
+            dgRecords.ItemsSource = PageHelper.ConnectDb.OrderService.Where(x => x.Order.EmployeeId == employeeId).ToList();
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            PageHelper.MainFrame.GoBack();
         }
     }
 }

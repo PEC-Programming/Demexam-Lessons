@@ -12,6 +12,6 @@ namespace SaloonSharm.Helpers
     {
         public static Frame MainFrame;
         public static TextBlock PageName;
-        public static SaloonDbEntities ConnectDb = new SaloonDbEntities();
+        public static SaloonDbEntities ConnectDb;
     }
 }

@@ -9,6 +9,23 @@
       Title="OrderPage">
 
     <Grid>
-        <TextBlock Text="Work In Progress"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.15*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dgOrder" AutoGenerateColumns="False" CurrentCellChanged="dgOrder_CurrentCellChanged"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding MiddleName}"/>
+                <DataGridComboBoxColumn x:Name="cmbPosition" Header="Должность" SelectedItemBinding="{Binding Path=Position}" DisplayMemberPath="Name"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="1" Grid.Column="0" Content="Заявка" x:Name="btnRecord" Margin="5" MinWidth="200" HorizontalAlignment="Left"/>
+        <Button Grid.Row="1" Grid.Column="1" Content="Просмотреть" x:Name="btnWatchClRecords" Click="btnWatchClRecords_Click" Margin="5" MinWidth="200" HorizontalAlignment="Right"/>
     </Grid>
 </Page>

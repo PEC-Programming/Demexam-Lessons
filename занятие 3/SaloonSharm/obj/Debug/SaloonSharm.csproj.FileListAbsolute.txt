@@ -21,3 +21,5 @@ C:\Users\Дима\Desktop\репозиторий\занятие 3\SaloonSharm\ob
 C:\Users\Дима\Desktop\репозиторий\занятие 3\SaloonSharm\obj\Debug\Pages\SignInPage.baml
 C:\Users\Дима\Desktop\репозиторий\занятие 3\SaloonSharm\obj\Debug\Pages\OrderPage.g.cs
 C:\Users\Дима\Desktop\репозиторий\занятие 3\SaloonSharm\obj\Debug\Pages\OrderPage.baml
+C:\Users\Дима\Desktop\репозиторий\занятие 3\SaloonSharm\obj\Debug\Pages\RecordsPage.g.cs
+C:\Users\Дима\Desktop\репозиторий\занятие 3\SaloonSharm\obj\Debug\Pages\RecordsPage.baml
